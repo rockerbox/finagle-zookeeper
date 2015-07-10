@@ -3,6 +3,7 @@ dist/
 project/boot/
 project/plugins/project/
 project/plugins/src_managed/
+releases/
 *.log
 *.tmproj
 lib_managed/
