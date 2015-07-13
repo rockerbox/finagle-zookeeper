@@ -29,7 +29,7 @@ Every request returns a *twitter.util.Future* (see [Effective Scala](http://twit
 
 ##### Client creation ( more details [here](https://github.com/finagle/finagle-zookeeper/wiki/1.-Create-a-ZkClient) )
 ```scala
-  val client = ZooKeeper.newRichClient("127.0.0.1:2181,10.0.0.10:2181,192.168.1.1:2181")
+  val client = Zookeeper.newRichClient("127.0.0.1:2181,10.0.0.10:2181,192.168.1.1:2181")
 ```
 - `127.0.0.1:2181,10.0.0.10:2181,192.168.1.1:2181` is a String representing the server list, separated by a comma
 
@@ -37,7 +37,7 @@ Every request returns a *twitter.util.Future* (see [Effective Scala](http://twit
 ```scala
 val connect = client.connect
 connect onSuccess { _ =>
-  logger.info("Connected to zookeeper server: " + client.adress)
+  logger.info("Connected to zookeeper server")
 } onFailure { exc =>
   logger.severe("Connect Error")
 }
